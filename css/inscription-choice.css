@@ -1,0 +1,60 @@
+
+/* Masque le profil par défaut */
+#choice-profil {
+    display: none;
+}
+
+/* Styles pour rendre le tableau responsive sur les petits écrans */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+        border-collapse: collapse;  /* Assure que les bordures ne s'affichent pas en double */
+    }
+
+    td {
+        text-align: center;          /* Centre le contenu des cellules */
+        padding: 0;
+        width: 50%;                  /* Chaque cellule prend 50% de la largeur de l'écran */
+    }
+
+    img {
+        max-width: 100%;             /* Les images s'ajustent à la largeur de leur conteneur */
+        height: auto;
+        display: block;
+        margin: 0 auto;              /* Centre l'image horizontalement */
+    }
+
+    #choice-profil {
+        display: block;              /* Rend visible le profil pour les écrans petits */
+    }
+
+    table tr td a img {
+        width: 50%;                  /* Ajuste la taille des images à 50% pour les petits écrans */
+        height: auto;
+    }
+}
+
+/* Styles généraux pour tous les écrans */
+table {
+    width: 100%;                      /* Le tableau prend 100% de la largeur disponible */
+    margin: 0 auto;                   /* Centre le tableau dans son conteneur */
+    border-collapse: collapse;        /* Supprime les bordures entre les cellules */
+}
+
+td {
+    text-align: center;               /* Centre le contenu des cellules */
+    padding: 10px;                    /* Ajoute un peu d'espace autour des éléments dans les cellules */
+}
+
+img {
+    display: block;                   /* Évite les espaces blancs sous les images inline */
+    margin: 0 auto;                   /* Centre l'image horizontalement */
+    max-width: 100%;                  /* L'image ne dépasse jamais la taille de son conteneur */
+    height: auto;
+}
+
+/* Transition pour améliorer l'effet au survol des images */
+img:hover {
+    transform: scale(1.1);            /* Augmente légèrement la taille de l'image au survol */
+    transition: transform 0.3s ease-in-out;
+}
