@@ -1,0 +1,246 @@
+
+/* Variables de couleur */
+:root {
+    --primary-color: #C65D3A;
+    --text-color: #333;
+    --background-color: #fff;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Cacher le footer et le menu hamburger par défaut */
+  #site-footer, .menu-hamburger,#connexion-title,.form-container {
+    display: none;
+  }
+  
+  h1, p {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+  }
+  
+  /* Media queries */
+  @media (max-width: 767px) {
+    body {
+      background-image: url('../images/background-img.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      color: white;
+    }
+  
+    .menu-hamburger {
+      display: block;
+      position: relative;
+    }
+  
+    .hamburger-icon {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      text-align: left;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  
+    .menu-links {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-color);
+      text-align: left;
+      z-index: 2;
+    }
+  
+    .menu-links a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid var(--background-color);
+    }
+  
+    .menu-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  
+    .menu-links a:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  
+    #site-footer {
+      display: block;
+      background-color: var(--primary-color);
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  
+    .footer-icons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  
+    .footer-icons img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+
+
+    #connexion-title {
+        display: flex;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 250px;
+        justify-content: center;
+        align-items: flex-start; /* Aligne les éléments en haut */
+        background-color: #004080;
+        border-radius: 10px;
+        margin-top: -30%;
+        z-index: 1;
+        
+    }
+    
+    #connexion-title h1 {
+        color: white;
+        text-align: center;
+        font-size: 2.5em;
+        margin: 0;
+      
+    }
+
+
+     /* Ajout de styles pour le formulaire */
+
+      
+     .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80%;;
+        flex-direction: column;
+    }
+
+
+    .radio-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;  /* Le conteneur prend toute la largeur */
+      max-width: 400px;  /* Limite la taille maximale sur les grands écrans */
+      padding: 0 20px;  /* Ajoute un peu d'espace de chaque côté */
+      box-sizing: border-box;  /* Assure que padding et largeur ne dépassent pas */
+  }
+
+     input[type="radio"] {
+        transform: scale(1.5);  /* Augmente la taille des checkboxes pour les rendre plus visibles */
+     }
+
+     .radio-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;  /* Centrer les éléments */
+  }
+        img {
+            max-width: 100%;  /* L'image prendra toute la largeur de son conteneur */
+            height: auto;  /* Conserve le ratio de l'image */
+            margin-top: 10px;  /* Ajoute un espace entre le bouton radio et l'image */
+        }
+
+
+
+
+
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          overflow-y: auto;  /* Ajoute une scrollbar verticale si le contenu dépasse */
+      }
+
+      .scrollable-content {
+          max-width: 600px;  /* Limite la taille maximale sur les grands écrans */
+          margin: 20px auto;  /* Centre le contenu horizontalement avec un peu d'espace autour */
+      }
+
+
+
+
+
+
+
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="password"] {
+        width: calc(100% - 55px); /* Réduire la largeur pour ne pas prendre toute la largeur de l'écran */
+        padding: 10px;
+        box-sizing: border-box;
+        margin-left: 20px; /* Marge à gauche pour aligner les champs */
+        background-color: transparent; /* Fond transparent */
+        color:white;
+        border-color:#fff;
+    }
+
+
+    .form-container input[type="submit"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        margin-left: 25px;
+        background-color: #004080;
+        color: white; /* Couleur du texte */
+        border: none; /* Pas de bordure */
+        cursor: pointer; /* Curseur pointeur */
+        align-self: center; /* Centrer le bouton */
+        border-radius: 24px;
+    }
+
+
+
+
+  }
+  
+  @media (max-width: 445px) {
+    h1 {
+      padding-top: 80px;
+    }
+  
+    .hamburger-icon {
+      top: 5px;
+    }
+
+    
+    #connexion-title {
+        width: 250px;
+        height: 150px;
+      
+      }
+    
+      #connexion-title h1 {
+        font-size: 2em;
+      }
+    
+
+  }
