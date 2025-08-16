@@ -1,0 +1,168 @@
+
+/* Variables de couleur */
+:root {
+  --primary-color: #C65D3A;
+  --text-color: #333;
+  --background-color: #fff;
+  --footer-background: #004080;
+}
+
+/* Styles de base */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+h1, p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Cacher le formulaire par défaut */
+#inscription-form {
+  display: none;
+}
+
+#site-footer, .menu-hamburger,#inscription-title{
+  display: none;
+}
+
+
+/* Styles pour mobile */
+@media (max-width: 767px) {
+  body {
+    background-image: url('../images/background-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+  }
+
+  #inscription-title {
+    position: relative;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: var(--footer-background);
+    border-radius: 10px 10px 0 0;
+    display:block;
+  }
+
+  /* Afficher le formulaire */
+  #inscription-form {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  /* Styles pour le menu hamburger et le footer */
+  .menu-hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .menu-links {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid var(--background-color);
+  }
+
+  #site-footer {
+    display: block;
+    background-color: var(--footer-background);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Ajustements pour très petits écrans */
+@media (max-width: 445px) {
+  #inscription-title {
+    margin-top: 80px;
+  }
+
+  #inscription-form {
+    padding: 15px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}
