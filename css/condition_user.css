@@ -1,0 +1,76 @@
+
+.menu-links {
+
+    z-index: 2;
+
+}
+
+#condition-user-title,
+#rules-of-app,
+form {
+    display: none;
+}
+
+
+
+@media (max-width: 767px) {
+
+    #condition-user-title {
+        display: flex;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        height: 90px;
+        justify-content: center;
+        align-items: flex-start;
+        /* Aligne les éléments en haut */
+        background-color: #004080;
+        border-radius: 10px;
+        margin-top: -30%;
+        margin-bottom: 15px;
+        z-index: 1;
+
+    }
+
+
+    #rules-of-app {
+        font-size: 0.9rem;
+        /* Réduit légèrement la taille du texte sur les petits écrans */
+        padding: 8px;
+        max-width: 95%;
+        /* Ajuste la largeur du paragraphe sur de plus petits écrans */
+        margin-top: 90%;
+        display: block;
+    }
+
+    form {
+        display: block;
+        /* Affiche le formulaire */
+        margin-top: 20px;
+        /* Ajoute un peu d'espacement si nécessaire */
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    #rules-of-app {
+        font-size: 0.85rem;
+        /* Réduction supplémentaire pour les écrans mobiles */
+        line-height: 1.5;
+        /* Réduit l'espacement pour s'adapter à l'écran */
+        padding: 5px;
+        margin-top: 90%;
+
+    }
+
+    form {
+        display: block;
+        /* Affiche le formulaire */
+        margin-top: 20px;
+    }
+
+
+}
