@@ -1,0 +1,235 @@
+
+:root {
+  --primary-color: #C65D3A;
+  --text-color: #fff;
+  --background-color: #fff;
+  --menu-bg-color: rgba(255, 255, 255, 0.2);
+  --border-color: #fff;
+}
+
+/* Reset et styles globaux */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-image: url('../images/background-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Menu horizontal pour les grands écrans */
+.horizontal-menu {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+}
+
+.horizontal-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  position: relative;
+  /* Pour le sous-menu */
+}
+
+.horizontal-menu a:hover {
+  background-color: var(--menu-bg-color);
+}
+
+/* Styles pour le menu déroulant */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  /* Caché par défaut */
+  position: absolute;
+  background-color: var(--primary-color);
+  /* Couleur de fond pour le sous-menu */
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Effet d'ombre */
+  z-index: 1;
+  /* Assure que le menu soit au-dessus d'autres éléments */
+  margin-top: 10px;
+  /* Ajoute un espace au-dessus du sous-menu */
+}
+
+.dropdown-menu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--menu-bg-color);
+  /* Changer la couleur au survol */
+}
+
+/* Affichage du sous-menu lorsqu'il est actif */
+.show {
+  display: block;
+}
+
+/* Cacher des éléments pour petits écrans */
+#site-footer,
+.menu-hamburger,
+#title-mini,
+#accueil-description-mini,
+.centered-div {
+  display: none;
+}
+
+/* Affichage pour les grands écrans */
+@media (min-width: 768px) {
+  .horizontal-menu {
+    display: flex;
+  }
+
+  .centered-div {
+    display: block;
+    /* Affiche la div sur grands écrans */
+    position: relative;
+    margin-top: 20px;
+    /* Ajuste l'espace sous le menu */
+    text-align: center;
+    background-color: rgba(200, 57, 57, 0.8);
+    /* Couleur avec transparence */
+    padding: 15px;
+    /* Espacement intérieur */
+    width: 50%;
+    /* Largeur de 50% de l'écran */
+    height: 100px;
+    /* Hauteur fixe de 100px */
+    margin-left: auto;
+    /* Centrer horizontalement */
+    margin-right: auto;
+
+
+    /* Centrer horizontalement */
+    border-radius: 15px;
+    /* Bordures arrondies */
+    color: white;
+    /* Texte blanc pour la lisibilité */
+  }
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 767px) {
+  .horizontal-menu {
+    display: none;
+  }
+
+  /* Menu hamburger */
+  .menu-hamburger {
+    display: block;
+    position: relative;
+  }
+
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .menu-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: left;
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .menu-links a:hover {
+    background-color: var(--menu-bg-color);
+  }
+
+  .menu-links a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  /* Footer */
+  #site-footer {
+    display: block;
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  /* Liste d'événements */
+  .event-list {
+    text-align: center;
+  }
+
+  ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  /* Afficher des éléments spécifiques aux petits écrans */
+  #title-mini,
+  #accueil-description-mini {
+    display: block;
+  }
+}
+
+/* Ajustements pour les très petits écrans */
+@media (max-width: 445px) {
+  h1 {
+    padding-top: 50px;
+  }
+
+  .hamburger-icon {
+    top: 5px;
+  }
+}
