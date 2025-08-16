@@ -1,0 +1,445 @@
+
+/* Variables de couleur */
+:root {
+  --primary-color: #C65D3A;
+  --text-color: #333;
+  --background-color: #fff;
+  --menu-bg-color: rgba(255, 255, 255, 0.2);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cacher le footer et le menu hamburger par défaut */
+#site-footer,
+.menu-hamburger,
+
+#research,
+.event-details {
+  display: none;
+}
+
+h1,
+p {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+
+
+  body {
+    background-image: url('../images/background-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+  }
+
+
+  /* Menu horizontal pour les grands écrans */
+  .horizontal-menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+  }
+
+  .horizontal-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    position: relative;
+    /* Pour le sous-menu */
+  }
+
+  .horizontal-menu a:hover {
+    background-color: var(--menu-bg-color);
+  }
+
+  #events-title {
+
+    display: block;
+    /* Affiche la div sur grands écrans */
+    position: relative;
+    margin-top: 20px;
+    /* Ajuste l'espace sous le menu */
+    text-align: center;
+    background-color: rgba(200, 57, 57, 0.8);
+    /* Couleur avec transparence */
+    padding: 15px;
+    /* Espacement intérieur */
+    width: 50%;
+    /* Largeur de 50% de l'écran */
+    height: 100px;
+    /* Hauteur fixe de 100px */
+    margin-left: auto;
+    /* Centrer horizontalement */
+    margin-right: auto;
+
+
+    /* Centrer horizontalement */
+    border-radius: 15px;
+    /* Bordures arrondies */
+    color: white;
+    /* Texte blanc pour la lisibilité */
+
+    margin-bottom: 40px;
+
+
+  }
+
+
+  #events-title h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;
+
+
+  }
+
+  #search {
+
+    width: 500px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+
+  }
+
+
+  #research {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+  }
+
+
+  #screen-pc {
+
+
+    background-color: rgba(200, 57, 57, 0.8);
+
+    color: #FFF;
+
+    padding: 20px;
+  }
+
+
+
+
+
+
+
+
+
+  #event-details {
+    display: flex;
+    /* Utilise Flexbox pour l'alignement */
+  }
+
+  .event-image-container {
+    text-align: center;
+    /* Centre le titre sous l'image */
+    margin-right: 15px;
+    /* Espace entre l'image et les informations */
+  }
+
+  .event-image {
+    width: 400px;
+    /* Ajustez la largeur selon vos besoins */
+    height: 200px;
+    /* Ajustez la hauteur selon vos besoins */
+  }
+
+  .event-title {
+    margin: 10px 0;
+    /* Ajoute un espace au-dessus et en dessous du titre */
+  }
+
+  .event-text {
+    font-size: 20px;
+    /* Taille de police pour le texte */
+    display: flex;
+    flex-direction: column;
+    /* Aligne les informations verticalement */
+
+  }
+
+
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+
+  .horizontal-menu {
+    display: none;
+  }
+
+  body {
+    background-image: url('../images/background-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+  }
+
+  .menu-hamburger {
+    display: block;
+    position: relative;
+  }
+
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .menu-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: left;
+    z-index: 2;
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid var(--background-color);
+  }
+
+  .menu-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-links a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  #site-footer {
+    display: block;
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  #events-title {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 250px;
+    justify-content: center;
+    align-items: flex-start;
+    /* Aligne les éléments en haut */
+    background-color: #004080;
+    border-radius: 10px;
+    margin-top: -30%;
+    z-index: 1;
+
+  }
+
+  #events-title h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;
+    padding-top: 25%;
+
+  }
+
+  #research {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+  }
+
+  input[type="text"] {
+    padding: 10px;
+
+    font-size: 16px;
+
+    margin-top: 90%;
+
+    border-radius: 10px;
+
+    margin-bottom: 5%;
+  }
+
+
+  input[type="submit"] {
+
+    padding: 10px;
+
+    border-radius: 30px;
+
+    background-color: #004080;
+
+    color: white;
+
+  }
+
+  #suggestions {
+
+    background-color: white;
+
+    color: black;
+
+    margin-top: -2.9%;
+
+    width: 190px;
+
+    z-index: 2;
+
+  }
+
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+
+  .suggestion-item:hover {
+    background-color: #f0f0f0;
+  }
+
+
+  /* Styles pour le conteneur des détails d'événements */
+  .event-details {
+    max-width: 800px;
+    /* Largeur maximale pour les détails des événements */
+    margin: 20px auto;
+    /* Centrer le contenu */
+    padding: 20px;
+
+    display: block;
+
+    /* Bordure pour délimiter le contenu */
+    border-radius: 5px;
+
+    /* Couleur de fond */
+  }
+
+  /* Styles pour les titres des événements */
+  .event-details h2 {
+    font-size: 1.5em;
+    /* Taille de police pour le titre */
+    margin: 10px 0;
+    /* Marge autour du titre */
+  }
+
+  .event-details img {
+    max-width: 100%;
+    /* L'image s'adapte à la largeur du conteneur */
+    height: auto;
+    /* Maintient le ratio de l'image */
+    margin: 10px auto;
+    /* Centre l'image avec une marge en haut et en bas */
+    display: block;
+    /* Nécessaire pour centrer l'image */
+    border-radius: 15px;
+    /* Bordure arrondie */
+    border: 2px solid var(--primary-color);
+    /* Bordure colorée autour de l'image */
+
+
+    border-radius: 30px;
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+  }
+
+
+  /* Styles pour les paragraphes des événements */
+  .event-details p {
+    font-size: 1em;
+    /* Taille de police pour le texte */
+    line-height: 1.5;
+    /* Espacement entre les lignes */
+  }
+
+
+
+  /*
+    
+
+*/
+
+
+}
+
+@media (max-width: 445px) {
+
+  #events-title {
+    width: 250px;
+    height: 150px;
+
+  }
+
+  #events-title h1 {
+    font-size: 2em;
+  }
+
+  h1 {
+    padding-top: 80px;
+  }
+
+  .hamburger-icon {
+    top: 5px;
+  }
+
+
+
+}
